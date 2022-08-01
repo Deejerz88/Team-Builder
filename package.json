@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "inquirer": "^9.0.2"
+  },
+  "name": "team-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deejerz88/Team-Builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deejerz88/Team-Builder/issues"
+  },
+  "homepage": "https://github.com/Deejerz88/Team-Builder#readme",
+  "description": ""
+}
