@@ -1,5 +1,5 @@
 const generatePrompts = (pos) => {
-  console.log('Generating prompts', pos);
+  console.log("Generating prompts", pos);
   pos = pos || "Manager";
   return [
     {
@@ -23,6 +23,12 @@ const generatePrompts = (pos) => {
       },
     },
     {
+      type: "maxlength-input",
+      message: `Describe this ${pos} in 160 characters or less.`,
+      name: `${pos}.desc`,
+      maxLength: 160
+    },
+    {
       type: "input",
       message: `What is the ${pos}'s Office Number?`,
       name: `${pos}.office`,
@@ -31,11 +37,9 @@ const generatePrompts = (pos) => {
         else return null;
       },
       validate(input) {
-        let valid = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(
-          input
-        );
+        let valid = !isNaN(input);
         if (valid) return true;
-        else return "Please enter a valid phone number";
+        else return "Please enter a valid Office Number";
       },
     },
 
@@ -66,4 +70,4 @@ const generatePrompts = (pos) => {
   ];
 };
 
-export default generatePrompts
+module.exports = generatePrompts;

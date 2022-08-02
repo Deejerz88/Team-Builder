@@ -1,15 +1,17 @@
-import inquirer from "inquirer";
-import generatePrompts from "./lib/generatePrompts.js";
-import buildHTML from "./lib/buildHTML.js";
+let inquirer = require("inquirer");
+const generatePrompts = require("./src/generatePrompts.js");
+const buildHTML = require("./src/buildHTML.js");
+const MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
+
+inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt);
 
 let team = {
   Manager: {},
   Engineers: [],
   Interns: [],
 };
-let pos = "Manager";
 
-const getInfo = () => {
+const getInfo = (pos) => {
   let prompts = generatePrompts(pos);
   inquirer.prompt(prompts).then((response) => {
     if (pos === "Manager") {
@@ -17,21 +19,22 @@ const getInfo = () => {
     } else {
       team[`${pos}s`].push(response[`${pos}`]);
     }
-    console.log(response);
-    console.log(team);
+    console.log(
+      "Your Team:",
+      "\n Managers:",
+      1,
+      "\n Engineers:",
+      team.Engineers.length,
+      "\n Interns:",
+      team.Interns.length
+    );
     pos = response.next;
     if (pos !== "None") {
-      getInfo();
+      getInfo(pos);
     } else {
       buildHTML(team);
     }
   });
 };
 
-// inquirer.prompt(prompts).then((response) => {
-//   console.log(response);
-//   pos = response.next;
-//   prompts = generatePrompts(pos);
-// });
-
-getInfo();
+getInfo("Manager");
