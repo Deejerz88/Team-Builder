@@ -40,11 +40,6 @@ const getInfo = (pos) => {
         );
         break;
     }
-    // if (pos === "Manager") {
-    //   team.Manager = new Manager(res.name, res.id,res.email, res.desc,res.office);
-    // } else {
-    //   team[`${pos}s`].push(new `${pos}`(res.name, res.id, res.email, res.desc));
-    // }
     console.log(team);
     console.log(
       "Your Team:",
