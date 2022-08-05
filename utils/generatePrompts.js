@@ -1,21 +1,20 @@
 const generatePrompts = (pos) => {
   console.log("Generating prompts", pos);
-  pos = pos || "Manager";
   return [
     {
       type: "input",
       message: `What is the ${pos}'s name?`,
-      name: `${pos}.name`,
+      name: `name`,
     },
     {
       type: "input",
       message: `What is the ${pos}'s Employeed ID?`,
-      name: `${pos}.id`,
+      name: "id",
     },
     {
       type: "input",
       message: `What is the ${pos}'s email address?`,
-      name: `${pos}.email`,
+      name: "email",
       validate(input) {
         let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input);
         if (valid) return true;
@@ -25,13 +24,18 @@ const generatePrompts = (pos) => {
     {
       type: "maxlength-input",
       message: `Describe this ${pos} in 160 characters or less.`,
-      name: `${pos}.desc`,
-      maxLength: 160
+      name: "desc",
+      maxLength: 160,
+    },
+    {
+      type: "input",
+      message: `Add a picture for the ${pos}`,
+      name: "pic",
     },
     {
       type: "input",
       message: `What is the ${pos}'s Office Number?`,
-      name: `${pos}.office`,
+      name: "office",
       when() {
         if (pos == "Manager") return true;
         else return null;
@@ -46,7 +50,7 @@ const generatePrompts = (pos) => {
     {
       type: "input",
       message: `What is the ${pos}'s GitHub Username?`,
-      name: `${pos}.github`,
+      name: "github",
       when() {
         if (pos == "Engineer") return true;
         else return null;
@@ -55,7 +59,7 @@ const generatePrompts = (pos) => {
     {
       type: "input",
       message: `What school does the ${pos}'s attend?`,
-      name: `${pos}.school`,
+      name: "school",
       when() {
         if (pos == "Intern") return true;
         else return null;

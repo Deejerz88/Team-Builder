@@ -1,4 +1,4 @@
-const htmlTemplate =`<!DOCTYPE html>
+const htmlTemplate = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,9 +26,8 @@ const htmlTemplate =`<!DOCTYPE html>
             <strong>Our Team</strong>
           </h2>
         </header>
-        <div class="row">
+        <div class="row justify-content-center">
           <!-- cards -->
-          
         </div>
       </div>
     </div>
@@ -38,6 +37,6 @@ const htmlTemplate =`<!DOCTYPE html>
       crossorigin="anonymous"
     ></script>
   </body>
-</html>`
+</html>`;
 
 module.exports = htmlTemplate
