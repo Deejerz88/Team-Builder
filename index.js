@@ -17,7 +17,6 @@ let team = {
 const getInfo = (pos) => {
   let prompts = generatePrompts(pos);
   inquirer.prompt(prompts).then((res) => {
-    console.log(res);
     switch (pos) {
       case "Manager":
         team.Manager = new Manager(
@@ -40,7 +39,6 @@ const getInfo = (pos) => {
         );
         break;
     }
-    console.log(team);
     console.log(
       "Your Team:",
       "\n Managers:",
