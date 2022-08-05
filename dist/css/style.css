@@ -138,22 +138,6 @@ body{margin-top:20px;}
     margin: 0
 }
 
-.ourTeam .i .c .more .socials a.facebook {
-    background: #3262b9
-}
-
-.ourTeam .i .c .more .socials a.facebook:hover {
-    background: #2d57a5
-}
-
-.ourTeam .i .c .more .socials a.twitter {
-    background: #3dd7e5
-}
-
-.ourTeam .i .c .more .socials a.twitter:hover {
-    background: #27d2e2
-}
-
 .ourTeam .i .c .more .socials a.email {
     background: #e23535
 }
@@ -162,11 +146,11 @@ body{margin-top:20px;}
     background: #de2020
 }
 
-.ourTeam .i .c .more .socials a.linkedin {
+.ourTeam .i .c .more .socials a.github {
     background: #069
 }
 
-.ourTeam .i .c .more .socials a.linkedin:hover {
+.ourTeam .i .c .more .socials a.github:hover {
     background: #005580
 }
 
